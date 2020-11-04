@@ -1,0 +1,42 @@
+:host {
+  form {
+    .mdl-cell {
+      margin-left: 16px;
+    }
+
+    .mdl-card__supporting-text {
+      padding-bottom: 70px;
+    }
+  }
+
+}
+
+.form-inline ,form{
+  color: black;
+
+  label {
+    display: inline-block;
+  }
+  .row{
+    width: 100%;
+  }
+}
+.btn-Edit{
+  text-align: center;
+  margin: -8px auto;
+}
+base-card{
+  height: auto!important;
+}
+.btn-info2{
+  margin: auto 0;
+  text-align: end;
+  margin-right: 120px;
+  border-radius: 50%;
+}
+.col-form-label{
+line-height: 0.5 !important;
+}
+.mt-4{
+  margin-top: 15px;
+}

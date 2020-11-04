@@ -1,0 +1,23 @@
+.confirm-dialog-container {
+  .top-line {
+      margin: 0px -24px 0px -24px;
+      height: 40px;
+  }
+  .red {
+      background-color: #ce2c3f;
+  }
+
+  .mat-raised-button.ok-button {
+      color: white;
+  }
+  .cancel-button {
+      color: white;
+      background-color: #999999;
+  }
+}
+.p-10{
+  padding: 10px !important;
+}
+.btn-m{
+  margin: 0 2px;
+}

@@ -1,0 +1,103 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$material-angular-dashboard-primary: mat-palette($mat-indigo);
+$material-angular-dashboard-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$material-angular-dashboard-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$material-angular-dashboard-theme: mat-light-theme((
+  color: (
+    primary: $material-angular-dashboard-primary,
+    accent: $material-angular-dashboard-accent,
+    warn: $material-angular-dashboard-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($material-angular-dashboard-theme);
+
+
+
+@import './helpers';
+@import '~nvd3/build/nv.d3.css';
+@import '~material-design-lite/src/material-design-lite.scss';
+@import './scss/material-angular-select';
+@import './scss/layout';
+@import './scss/chip';
+@import './scss/badge';
+@import './scss/slider';
+@import './scss/menu';
+@import './scss/card';
+@import './scss/button';
+@import './scss/textfield';
+@import './scss/data-table';
+@import './scss/label';
+@import './scss/list';
+@import './scss/form';
+@import './scss/scroll';
+@import './scss/helper';
+@import './scss/table';
+@import './scss/progress';
+@import './scss/tooltip';
+@import './widgets/link';
+@import './widgets/chart-legend';
+@import './widgets/form';
+@import './widgets/input-group';
+@import './components/line-chart/line-chart.component';
+@import './components/card/card.component';
+@import './components/page-top/page-top.component';
+@import './components/pagination/pagination.component';
+@import './components/pie-chart/pie-chart.component';
+@import './components/progress/progress.component';
+@import './components/right-sidebar/sidebar/sidebar.component';
+@import './components/right-sidebar/right-sidebar.component';
+@import '/components/sidebar/sidebar.component';
+@import '/components/toggle/toggle.component';
+@import '/directives/tooltip/tooltip.component';
+
+/////////////////
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import '~@fortawesome/fontawesome-free/css/fontawesome';
+@import '~@fortawesome/fontawesome-free/css/brands';
+@import '~@fortawesome/fontawesome-free/css/solid';
+@import '~@fortawesome/fontawesome-free/css/regular';
+@import '~@fortawesome/fontawesome-free/css/svg-with-js.css';
+@import '~@fortawesome/fontawesome-free/css/v4-shims';
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/v4-shims.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-dialog-container {
+  padding: 0px !important;
+  padding-bottom: 20px !important;
+
+}
+.btn:hover, .btn:focus, .btn.focus{
+  border-color:transparent !important;
+  outline: none !important;
+}

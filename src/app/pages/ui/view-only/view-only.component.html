@@ -1,0 +1,85 @@
+<div class="col-12">
+  <base-card>
+    <base-card-title>
+      <h5 class="mdl-card__title-text text-color--white">View Item</h5>
+    </base-card-title>
+    <base-card-body>
+      <form>
+        <div class="form-group row" *ngIf="this.data.item">
+          <label for="name" class="col-sm-2 col-form-label">ID</label>
+          <div class="col-sm-6">
+            <span class="col-6" id="id"><strong>{{rowObj.id}}</strong></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="title" class="col-sm-2 col-form-label">Title</label>
+          <div class="col-sm-6">
+            <span class="col-6" id="id"><strong>{{rowObj.title}}</strong></span>
+
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="qnt" class="col-sm-2 col-form-label">Quantity</label>
+          <div class="col-sm-6">
+            <span class="col-6" id="id"><strong>{{rowObj.qnty}}</strong></span>
+
+          </div>
+
+        </div>
+        <div class="form-group row">
+          <label for="color" class="col-sm-2 col-form-label">color</label>
+          <div class="col-sm-6">
+            <!-- <input type="number" class="form-control" id="id" name="id" placeholder="ID" [(ngModel)]="person.id"> -->
+            <!-- <mat-form-field appearance="outline ">
+              <input matInput [ngxMatColorPicker]="picker" [formControl]="colorCtr" id="color" name="color">
+
+              <ngx-mat-color-toggle matSuffix [for]="picker"></ngx-mat-color-toggle >
+              <ngx-mat-color-picker #picker [touchUi]="touchUi" [color]="color"></ngx-mat-color-picker>
+            </mat-form-field> -->
+            <span class="col-6" id="id"><strong>{{rowObj.color}}</strong></span>
+
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="email" class="col-sm-2 col-form-label">Icon</label>
+          <div class="col-sm-6">
+            <!-- <div class="input-group">
+              <span class="input-group-addon"><i [ngClass]="this.rowObj.iconName"></i></span>
+              <input type="text" name="iconCss" class="form-control" [(ngModel)]="this.rowObj.iconName"
+                [iconPicker]="iconCss.value" [ipPosition]="'bottom'" [ipWidth]="'250px'" [ipIconSize]="'16px'"
+                [ipIconVerticalPadding]="'6px'" [ipIconHorizontalPadding]="'10px'" [ipKeepSearchFilter]="'false'"
+                [ipFallbackIcon]="this.rowObj.iconName" (iconPickerSelect)="onIconPickerSelect($event)" />
+            </div> -->
+            <span class="col-6" id="id"><strong>{{rowObj.iconName}}</strong></span>
+
+          </div>
+        </div>
+        <ng-container >
+          <div class="form-group row">
+            <label for="created_at" class="col-sm-2 col-form-label">Created</label>
+            <div class="col-sm-6">
+              <span class="col-6" id="created_at"><strong>{{rowObj.created_at|date:'dd/M/yy,h:mm:ss'}}</strong></span>
+
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="updated_at" class="col-sm-2 col-form-label">Updated</label>
+            <div class="col-sm-6">
+              <span class="col-6" id="updated_at"><strong>{{rowObj.updated_at|date:'dd/M/yy,h:mm:ss'}}</strong></span>
+
+            </div>
+          </div>
+        </ng-container>
+
+
+      </form>
+    </base-card-body>
+    <div class="btn-footer">
+          <button [mat-dialog-close]="false" type="button" class="btn btn-light" [disabled]="false">
+        Cancel
+      </button>
+    </div>
+  </base-card>
+</div>
+

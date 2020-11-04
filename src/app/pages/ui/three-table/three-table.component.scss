@@ -1,0 +1,45 @@
+:host {
+  .mdl-card,
+  .mdl-card__supporting-text {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+
+    td {
+      font-size: 1rem;
+      text-align: left !important;
+    }
+  }
+
+  .no-padding {
+    padding: 0;
+    width: 100%;
+  }
+
+  .label__availability {
+    margin-right: 2px;
+  }
+}
+.material-icons {
+  font-size: 20px !important;
+  display: inline-block;
+  color: #333;
+}
+
+.action-icon {
+  font-size: 22px;
+  cursor: pointer;
+
+  &:hover {
+    color: white !important;
+    background-color: black;
+    border-radius: 8px;
+  }
+  .material-icons:hover{
+    color: white !important;
+
+  }
+
+}

@@ -1,0 +1,147 @@
+<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone">
+  <base-card>
+    <base-card-title>
+      <h1 class="mdl-card__title-text">Table1</h1>
+      <div class="mdl-layout-spacer text-right">
+
+        <button class="btn btn-success "  (click)="openDialagAddOrEdit()">Add</button>
+
+      </div>
+      <base-pagination [numPage]="numPage" [currentPage]="currentPage" (changePage)="changePage($event)">
+      </base-pagination>
+    </base-card-title>
+    <base-card-body class="no-padding">
+      <table class="mdl-data-table mdl-js-data-table sorting-table">
+        <thead>
+          <tr>
+            <th *ngFor="let header of advancedHeaders; let i = index" class="mdl-data-table__cell--non-numeric"
+              (click)="changeSorting(header, i)">
+              <span>{{ header.name }}</span>
+              <i *ngIf="header.sort !== null " class="material-icons sorting"
+                [class.asc]="header.sort === sortOrder.asc"
+                [class.active]="header.sort === sortOrder.asc || header.sort === sortOrder.desc">sort</i>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of advancedTable">
+
+            <td>{{row.id}}</td>
+            <td><span class="label label--mini"
+                [ngStyle]="{'background':row.color  ? row.color :''}">{{row.iconName}}</span></td>
+            <td>{{row.title}}</td>
+            <td>{{row.qnty}}</td>
+            <td>{{row.created_at|date:'dd/M/yy'}}</td>
+            <td>{{row.updated_at|date:'dd/M/yy'}}</td>
+
+            <td class="mdl-data-table__cell--non-numeric">
+              <a class="action-icon" matTooltip="Check" (click)="openDialagAddOrEdit(row)">
+                <i class="material-icons">check</i></a>
+               <a class="action-icon" matTooltip="Delete" (click)="openDialagDelete(row)"><i class="material-icons">delete_outline</i></a>
+               <a class="action-icon" matTooltip="View" (click)="openDialagView(row)"><i class="material-icons">visibility</i></a>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </base-card-body>
+  </base-card>
+</div>
+<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone">
+  <base-card>
+    <base-card-title>
+      <h1 class="mdl-card__title-text">Table2</h1>
+      <div class="mdl-layout-spacer text-right">
+
+        <button class="btn btn-success "  (click)="openDialagAddOrEdit2()">Add</button>
+
+      </div>
+      <base-pagination [numPage]="numPage2" [currentPage]="currentPage2" (changePage)="changePage2($event)">
+      </base-pagination>
+    </base-card-title>
+    <base-card-body class="no-padding">
+      <table class="mdl-data-table mdl-js-data-table sorting-table">
+        <thead>
+          <tr>
+            <th *ngFor="let header of advancedHeaders2; let i = index" class="mdl-data-table__cell--non-numeric"
+              (click)="changeSorting2(header, i)">
+              <span>{{ header.name }}</span>
+              <i *ngIf="header.sort !== null " class="material-icons sorting"
+                [class.asc]="header.sort === sortOrder2.asc"
+                [class.active]="header.sort === sortOrder2.asc || header.sort === sortOrder2.desc">sort</i>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of advancedTable2">
+
+            <td>{{row.id}}</td>
+            <td><span class="label label--mini"
+                [ngStyle]="{'background':row.color  ? row.color :''}">{{row.iconName}}</span></td>
+            <td>{{row.title}}</td>
+            <td>{{row.qnty}}</td>
+            <td>{{row.created_at|date:'dd/M/yy'}}</td>
+            <td>{{row.updated_at|date:'dd/M/yy'}}</td>
+
+            <td class="mdl-data-table__cell--non-numeric">
+              <a class="action-icon" matTooltip="Check" (click)="openDialagAddOrEdit2(row)">
+                <i class="material-icons">check</i></a>
+               <a class="action-icon" matTooltip="Delete" (click)="openDialagDelete2(row)"><i class="material-icons">delete_outline</i></a>
+               <a class="action-icon" matTooltip="View" (click)="openDialagView(row)"><i class="material-icons">visibility</i></a>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </base-card-body>
+  </base-card>
+</div>
+<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone">
+  <base-card>
+    <base-card-title>
+      <h1 class="mdl-card__title-text">Table3</h1>
+      <div class="mdl-layout-spacer text-right">
+
+        <button class="btn btn-success "  (click)="openDialagAddOrEdit3()">Add</button>
+
+      </div>
+      <base-pagination [numPage]="numPage3" [currentPage]="currentPage3" (changePage)="changePage3($event)">
+      </base-pagination>
+    </base-card-title>
+    <base-card-body class="no-padding">
+      <table class="mdl-data-table mdl-js-data-table sorting-table">
+        <thead>
+          <tr>
+            <th *ngFor="let header of advancedHeaders3; let i = index" class="mdl-data-table__cell--non-numeric"
+              (click)="changeSorting3(header, i)">
+              <span>{{ header.name }}</span>
+              <i *ngIf="header.sort !== null " class="material-icons sorting"
+                [class.asc]="header.sort === sortOrder3.asc"
+                [class.active]="header.sort === sortOrder3.asc || header.sort === sortOrder3.desc">sort</i>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of advancedTable3">
+
+            <td>{{row.id}}</td>
+            <td><span class="label label--mini"
+                [ngStyle]="{'background':row.color  ? row.color :''}">{{row.iconName}}</span></td>
+            <td>{{row.title}}</td>
+            <td>{{row.qnty}}</td>
+            <td>{{row.created_at|date:'dd/M/yy'}}</td>
+            <td>{{row.updated_at|date:'dd/M/yy'}}</td>
+
+            <td class="mdl-data-table__cell--non-numeric">
+              <a class="action-icon" matTooltip="Check" (click)="openDialagAddOrEdit3(row)">
+                <i class="material-icons">check</i></a>
+               <a class="action-icon" matTooltip="Delete" (click)="openDialagDelete3(row)"><i class="material-icons">delete_outline</i></a>
+               <a class="action-icon" matTooltip="View" (click)="openDialagView(row)"><i class="material-icons">visibility</i></a>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </base-card-body>
+  </base-card>
+</div>

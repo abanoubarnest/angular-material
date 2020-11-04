@@ -1,0 +1,17 @@
+<div class="confirm-dialog-container">
+  <div class="top-line" [ngClass]="data.color"></div>
+  <div class="col-md-12 text-center p-10">
+    <img width="100px" src="/assets/images/delete.svg">
+  </div>
+  <h5 class="text-center">
+    {{data.title }}
+  </h5>
+  <div class="text-center">
+    <p>{{data.message}}</p>
+  </div>
+  <div mat-dialog-actions class="justify-center">
+    <button  [ngClass]="data.color" class="ok-button" class="btn btn-danger btn-m"
+      [mat-dialog-close]="true">{{data.yesTitle }}</button>
+    <button mat-raised-button class="btn btn-light" (click)="onNoClick()">{{data.noTitle}}</button>
+  </div>
+</div>

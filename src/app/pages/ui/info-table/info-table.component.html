@@ -1,0 +1,104 @@
+<div class="col-12">
+  <base-card>
+    <base-card-title>
+      <h5 class="mdl-card__title-text text-color--white">{{title}}</h5>
+    </base-card-title>
+    <base-card-body>
+      <form>
+        <div class="form-group row" *ngIf="data.item">
+          <label for="name" class="col-sm-2 col-form-label">ID</label>
+          <div class="col-sm-6">
+            <span class="col-6" id="id"><strong>{{rowObj.id}}</strong></span>
+
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="title" class="col-sm-2 col-form-label">Title</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="title" name="title" placeholder="Title"
+              [(ngModel)]="rowObj.title">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="qnt" class="col-sm-2 col-form-label">Quantity</label>
+          <div class="col-sm-6">
+            <input type="number" class="form-control" id="qnt" name="qnt" placeholder="Quantity"
+              [(ngModel)]="rowObj.qnty">
+          </div>
+        </div>
+        <div class="form-group row" *ngIf="data.check">
+          <label for="qnt" class="col-sm-2 col-form-label" style="margin-top:18px">Gender</label>
+          <div class="col-sm-6">
+            <mat-form-field appearance="outline">
+              <mat-select placeholder="Gender" [(ngModel)]="rowObj.gender" name="gender" [compareWith]="preSelect"
+                >
+                <mat-option *ngFor="let option of genderList" [value]="option">
+                  {{ option}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+        </div>
+
+        <div class="form-group row">
+          <label for="color" class="col-sm-2 col-form-label">color</label>
+          <div class="col-sm-6">
+            <!-- <input type="number" class="form-control" id="id" name="id" placeholder="ID" [(ngModel)]="person.id"> -->
+            <mat-form-field appearance="outline">
+              <input matInput [ngxMatColorPicker]="picker" [formControl]="colorCtr" id="color" name="color">
+
+              <ngx-mat-color-toggle matSuffix [for]="picker"></ngx-mat-color-toggle>
+              <ngx-mat-color-picker #picker [touchUi]="touchUi" [color]="color"></ngx-mat-color-picker>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="email" class="col-sm-2 col-form-label">Icon</label>
+          <div class="col-sm-6">
+            <!-- <input [iconPicker]="this.rowObj.iconName"
+             [ipPlaceHolder]="'Choose an icon'"  [(ngModel)]="this.rowObj.iconName"  (iconPickerSelect)="onIconPickerSelect($event)"/> -->
+            <!-- <input type="email" class="form-control" id="email" name="email" placeholder="Email" [(ngModel)]="person.email"> -->
+            <div class="input-group">
+              <span class="input-group-addon"><i [ngClass]="this.rowObj.iconName"></i></span>
+              <input type="text" name="iconCss" class="form-control" [(ngModel)]="this.rowObj.iconName"
+                [iconPicker]="iconCss.value" [ipPosition]="'bottom'" [ipWidth]="'250px'" [ipIconSize]="'16px'"
+                [ipIconVerticalPadding]="'6px'" [ipIconHorizontalPadding]="'10px'" [ipKeepSearchFilter]="'false'"
+                [ipFallbackIcon]="this.rowObj.iconName" (iconPickerSelect)="onIconPickerSelect($event)" />
+            </div>
+
+          </div>
+        </div>
+        <ng-container *ngIf="this.data.item">
+          <div class="form-group row">
+            <label for="created_at" class="col-sm-2 col-form-label">Created</label>
+            <div class="col-sm-6">
+              <span class="col-6" id="created_at"><strong>{{rowObj.created_at|date:'dd/M/yy,h:mm:ss'}}</strong></span>
+
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="updated_at" class="col-sm-2 col-form-label">Updated</label>
+            <div class="col-sm-6">
+              <span class="col-6" id="updated_at"><strong>{{rowObj.updated_at|date:'dd/M/yy,h:mm:ss'}}</strong></span>
+
+            </div>
+          </div>
+        </ng-container>
+
+
+      </form>
+    </base-card-body>
+    <div class="btn-footer">
+      <button (click)="save();" type="button" class="btn btn-success mr-1" [disabled]="false">
+        save
+      </button>
+
+
+      <button [mat-dialog-close]="false" type="button" class="btn btn-light" [disabled]="false">
+        Cancel
+      </button>
+    </div>
+  </base-card>
+</div>
